@@ -10,6 +10,13 @@ namespace RogueProg
         internal int Column { get; private set; }
         internal int d;
 
+        private int[,] grid;
+
+        public Board()
+        {
+            grid = new int[Row, Column];
+        }
+
         /// <summary>
         /// Function that reads the args string to transfer the values.
         /// </summary>

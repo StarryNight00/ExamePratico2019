@@ -9,11 +9,16 @@ namespace RogueProg
         //Methods for each menu option
         //New Game calls Game
 
+        //All information strings
+        string highScore = "No information is available at the moment.";
+        string credits = "Developed by\n\n\t\tCatarina Matias\ta21801693";
+
         internal void NewGame()
         {
             //initialises Game
-            Console.WriteLine("\n\nLet's Start");
-            Console.Read();
+            Console.WriteLine("\n\nLet's Start\n\n");
+            Console.ReadKey();
+
 
             Game game = new Game();
             game.GameInit();
@@ -21,15 +26,19 @@ namespace RogueProg
 
         internal void HighScores()
         {
-            Console.WriteLine("\n\n\t\t\tNo information is available at the moment.");
-            Console.Read();
+            Console.Write("\n\n\t\t\t");
+            Console.WriteLine(highScore);
+            Console.Write("\n\n\n> ");
+            Console.ReadKey();
+
         }
 
         internal void Credits()
         {
-            Console.WriteLine("\n\n\t\t\tDeveloped by");
-            Console.WriteLine("\n\t\tCatarina Matias\ta21801693");
-            Console.Read();
+            Console.Write("\n\n\t\t\t");
+            Console.WriteLine(credits);
+            Console.Write("\n\n\n> ");
+            Console.ReadKey();
         }
 
         internal void Quit()

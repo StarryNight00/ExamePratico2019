@@ -6,8 +6,6 @@ namespace RogueProg
 {
     class Menu
     {
-        //Menu interface
-
         /// <summary>
         /// Variable to call on the MenuOptions class's methods.
         /// </summary>
@@ -23,8 +21,9 @@ namespace RogueProg
         /// </summary>
         public void FirstScreen()
         {
-            Console.WriteLine("-------");
-            Console.WriteLine("Press Any Key");
+            Console.WriteLine("\t\t\t-------");
+            Console.WriteLine("\t\t      Press Any Key");
+            Console.WriteLine("\t\t\t-------");
             //make first screen
         }
 
@@ -33,11 +32,11 @@ namespace RogueProg
         /// </summary>
         private void MenuPresentation()
         {
-            Console.WriteLine("Pratical Exam Project\n\n");
-            Console.WriteLine("1 -- New Game");
-            Console.WriteLine("2 -- High Scores");
-            Console.WriteLine("3 -- Credits");
-            Console.WriteLine("4 -- Quit");
+            Console.WriteLine("\n\n\n\n\n\t\t   Pratical Exam Project\n\n");
+            Console.WriteLine("\t\t\t1 -- New Game");
+            Console.WriteLine("\t\t\t2 -- High Scores");
+            Console.WriteLine("\t\t\t3 -- Credits");
+            Console.WriteLine("\t\t\t4 -- Quit");
         }
 
         public void MenuController()
@@ -45,10 +44,8 @@ namespace RogueProg
             do
             {
                 MenuPresentation();
-                Console.WriteLine("\n\n\n");
-                Console.Write("> ");
+                Console.Write("\n\n\n> ");
                 Console.WriteLine(input = Console.ReadLine());
-
 
                 switch (Convert.ToInt32(input))
                 {
@@ -63,6 +60,9 @@ namespace RogueProg
                         break;
                     case 4:
                         options.Quit();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input.");
                         break;
                 }
 

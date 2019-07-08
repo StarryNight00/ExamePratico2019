@@ -12,12 +12,13 @@ namespace RogueProg
             Console.OutputEncoding = Encoding.UTF8;
             arguments = args;
 
-            //Calls the menu class
             Menu menu = new Menu();
 
             menu.FirstScreen();
-            Console.Read();
+            Console.ReadKey();
+            
             menu.MenuController();
+
         }
     }
 }
