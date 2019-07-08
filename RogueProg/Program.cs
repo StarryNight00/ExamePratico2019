@@ -16,7 +16,7 @@ namespace RogueProg
             Menu menu = new Menu();
 
             menu.FirstScreen();
-            Console.ReadKey();
+            Console.Read();
             menu.MenuController();
         }
     }

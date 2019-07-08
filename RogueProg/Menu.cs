@@ -23,7 +23,6 @@ namespace RogueProg
         /// </summary>
         public void FirstScreen()
         {
-            Console.Clear();
             Console.WriteLine("-------");
             Console.WriteLine("Press Any Key");
             //make first screen
@@ -34,7 +33,6 @@ namespace RogueProg
         /// </summary>
         private void MenuPresentation()
         {
-            Console.Clear();
             Console.WriteLine("Pratical Exam Project\n\n");
             Console.WriteLine("1 -- New Game");
             Console.WriteLine("2 -- High Scores");

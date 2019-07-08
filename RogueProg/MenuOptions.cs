@@ -12,24 +12,24 @@ namespace RogueProg
         internal void NewGame()
         {
             //initialises Game
-            Console.Clear();
             Console.WriteLine("\n\nLet's Start");
-            Console.ReadKey();
+            Console.Read();
+
+            Game game = new Game();
+            game.GameInit();
         }
 
         internal void HighScores()
         {
-            Console.Clear();
             Console.WriteLine("\n\n\t\t\tNo information is available at the moment.");
-            Console.ReadKey();
+            Console.Read();
         }
 
         internal void Credits()
         {
-            Console.Clear();
             Console.WriteLine("\n\n\t\t\tDeveloped by");
             Console.WriteLine("\n\t\tCatarina Matias\ta21801693");
-            Console.ReadKey();
+            Console.Read();
         }
 
         internal void Quit()
