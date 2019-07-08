@@ -1,0 +1,11 @@
+C:\Users\cisam\source\repos\RogueProg\RogueProg\bin\Debug\netcoreapp2.1\RogueProg.deps.json
+C:\Users\cisam\source\repos\RogueProg\RogueProg\bin\Debug\netcoreapp2.1\RogueProg.runtimeconfig.json
+C:\Users\cisam\source\repos\RogueProg\RogueProg\bin\Debug\netcoreapp2.1\RogueProg.runtimeconfig.dev.json
+C:\Users\cisam\source\repos\RogueProg\RogueProg\bin\Debug\netcoreapp2.1\RogueProg.dll
+C:\Users\cisam\source\repos\RogueProg\RogueProg\bin\Debug\netcoreapp2.1\RogueProg.pdb
+C:\Users\cisam\source\repos\RogueProg\RogueProg\obj\Debug\netcoreapp2.1\RogueProg.csprojAssemblyReference.cache
+C:\Users\cisam\source\repos\RogueProg\RogueProg\obj\Debug\netcoreapp2.1\RogueProg.csproj.CoreCompileInputs.cache
+C:\Users\cisam\source\repos\RogueProg\RogueProg\obj\Debug\netcoreapp2.1\RogueProg.AssemblyInfoInputs.cache
+C:\Users\cisam\source\repos\RogueProg\RogueProg\obj\Debug\netcoreapp2.1\RogueProg.AssemblyInfo.cs
+C:\Users\cisam\source\repos\RogueProg\RogueProg\obj\Debug\netcoreapp2.1\RogueProg.dll
+C:\Users\cisam\source\repos\RogueProg\RogueProg\obj\Debug\netcoreapp2.1\RogueProg.pdb
