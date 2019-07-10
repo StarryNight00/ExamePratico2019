@@ -10,6 +10,8 @@ namespace RogueProg
         private Player player;
         private Exit exit;
 
+        internal int level = 1;
+
         public BoardRender(Board board, Player player, Exit exit)
         {
             this.board = board;
@@ -17,22 +19,34 @@ namespace RogueProg
             this.exit = exit;
         }
 
-        private void MapLegend()
+        private void LevelLegend()
         {
+            string leg1 = $"Level: {level} |";
+            string leg2 = $" Dificulty: {board.d} |";
+            string leg3 = $" Map Size: {board.Column}x{board.Row} ";
+
+            Console.WriteLine("\n>>> " + leg1 + leg2 + leg3 + "<<<\n\n");
+        }
+
+        private void MapGrid()
+        {
+            //Side Information
             int pX = player.CoorX;
             int pY = player.CoorY;
 
             int eX = exit.CoorX;
             int eY = exit.CoorY;
 
+            int i = 0;
 
-            Console.WriteLine($"Current coordinates P:\tx = {pX}\ty = {pY}");
-            Console.WriteLine($"Current coordinates E:\tx = {eX}\ty = {eY}");
-            Console.WriteLine($"Current HP:\t{player.HP}");
-        }
+            List<string> allStrings = new List<string>();
 
-        private void MapGrid()
-        {
+            allStrings.Add($"\t\tCurrent coordinates P:\tx = {pX}\ty = {pY}");
+            allStrings.Add($"\t\tCurrent coordinates E:\tx = {eX}\ty = {eY}");
+            allStrings.Add($"\t\tCurrent HP:\t{player.HP}");
+
+            //----
+
             for (int y = 0; y < board.Row; y++)
             {
                 Console.Write("\t\t");
@@ -43,25 +57,35 @@ namespace RogueProg
                     {
                         Console.Write(" P ");
                     }
-                    else if (x == exit.CoorX && y == exit.CoorY)
+                    /*else if (x == exit.CoorX && y == exit.CoorY)
                     {
                         Console.Write(" E ");
-                    }
+                    }*/
                     else
                     {
-                        Console.Write(" . ");
+                        Console.Write(" \u20DD ");
                     }
                 }
 
+                if (i < allStrings.Count)
+                {
+                    Console.WriteLine($"{allStrings[i]}");
+                    i++;
+                }
+                else
+                {
+                    Console.Write("\n");
+                }
+                
                 Console.Write("\n");
             }
         }
 
         public void Render()
         {
-            Console.Write("\n");
-            MapLegend();
+            LevelLegend();
             MapGrid();
+            //MapLegend();
         }
     }
 }

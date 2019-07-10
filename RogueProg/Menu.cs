@@ -16,6 +16,8 @@ namespace RogueProg
         /// </summary>
         private string input;
 
+        private int inputCvrt;
+
         /// <summary>
         /// Method that prints an intro screen when program opens.
         /// </summary>
@@ -24,7 +26,6 @@ namespace RogueProg
             Console.WriteLine("\t\t\t-------");
             Console.WriteLine("\t\t      Press Any Key");
             Console.WriteLine("\t\t\t-------");
-            //make first screen
         }
 
         /// <summary>
@@ -44,11 +45,21 @@ namespace RogueProg
             do
             {
                 MenuPresentation();
-                Console.Write("\n\n\n> ");
                 Console.WriteLine(input = Console.ReadLine());
+
+                if (input == null || input == "")
+                {
+                    Console.Write("\n\n\n> ");
+                    Console.WriteLine(input = Console.ReadLine());
+                }
+
+                inputCvrt = Convert.ToInt32(input);
 
                 switch (Convert.ToInt32(input))
                 {
+                    case 0:
+                        MenuController();
+                        break;
                     case 1:
                         options.NewGame();
                         break;
