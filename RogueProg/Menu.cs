@@ -16,8 +16,6 @@ namespace RogueProg
         /// </summary>
         private string input;
 
-        private int inputCvrt;
-
         /// <summary>
         /// Method that prints an intro screen when program opens.
         /// </summary>
@@ -52,8 +50,6 @@ namespace RogueProg
                     Console.Write("\n\n\n> ");
                     Console.WriteLine(input = Console.ReadLine());
                 }
-
-                inputCvrt = Convert.ToInt32(input);
 
                 switch (Convert.ToInt32(input))
                 {

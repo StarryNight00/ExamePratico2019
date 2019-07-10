@@ -23,9 +23,15 @@ namespace RogueProg
         {
             string leg1 = $"Level: {level} |";
             string leg2 = $" Dificulty: {board.d} |";
-            string leg3 = $" Map Size: {board.Column}x{board.Row} ";
+            string leg3 = $" Map Size: {board.Column}x{board.Row}" +
+                $"";
 
             Console.WriteLine("\n>>> " + leg1 + leg2 + leg3 + "<<<\n\n");
+        }
+
+        private void ControlLegend()
+        {
+            Console.WriteLine("\u2196 \u2191 \u2197");
         }
 
         private void MapGrid()
@@ -57,13 +63,9 @@ namespace RogueProg
                     {
                         Console.Write(" P ");
                     }
-                    /*else if (x == exit.CoorX && y == exit.CoorY)
-                    {
-                        Console.Write(" E ");
-                    }*/
                     else
                     {
-                        Console.Write(" \u20DD ");
+                        Console.Write(" O ");
                     }
                 }
 
