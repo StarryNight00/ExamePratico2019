@@ -31,7 +31,17 @@ namespace RogueProg
 
         private void ControlLegend()
         {
-            Console.WriteLine("\u2196 \u2191 \u2197");
+            string setas1 = "\n\t\u2196 \u2191 \u2197";
+            string setas2 = "\t\u2190 \u263C \u2192";
+            string setas3 = "\t\u2199 \u2193 \u2198";
+
+            string cmd1 = "To move use the NumPad keys in all directions.";
+            string wrn = "NOTE: Please turn the NumLock on, on the NumPad.";
+            string cmd2 = "Other actions:  (L) - Look Around\t(Q) - Quit";
+
+            Console.WriteLine(setas1 + "\t" + cmd1);
+            Console.WriteLine(setas2 + "\t" + wrn);
+            Console.WriteLine(setas3 + "\t" + cmd2);
         }
 
         private void MapGrid()
@@ -65,7 +75,7 @@ namespace RogueProg
                     }
                     else
                     {
-                        Console.Write(" O ");
+                        Console.Write(" \u23FA ");
                     }
                 }
 
@@ -87,7 +97,7 @@ namespace RogueProg
         {
             LevelLegend();
             MapGrid();
-            //MapLegend();
+            ControlLegend();
         }
     }
 }

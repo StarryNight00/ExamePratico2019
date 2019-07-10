@@ -38,62 +38,119 @@ namespace RogueProg
             switch (moveKey)
             {
                 case ConsoleKey.NumPad8:
-                    //up
-                    CoorY = CoorY - 1;
-                    HP--;
-                    turn++;
+                    if (CoorY < 1)
+                    {
+                        Console.WriteLine("\n\n>> CAN'T GO THAT WAY...");
+                    }
+                    else
+                    {
+                        //up
+                        CoorY = CoorY - 1;
+                        HP--;
+                        turn++;
+                    }
+                    
                     break;
 
                 case ConsoleKey.NumPad2:
-                    //down
-                    CoorY = CoorY + 1;
-                    HP--;
-                    turn++;
+                    if (CoorY >= board.Row - 1)
+                    {
+                        Console.WriteLine("\n\n>> CAN'T GO THAT WAY...");
+                    }
+                    else
+                    {
+                        //down
+                        CoorY = CoorY + 1;
+                        HP--;
+                        turn++;
+                    }
+                    
                     break;
                 case ConsoleKey.NumPad4:
-                    //left
-                    CoorX = CoorX - 1;
-                    HP--;
-                    turn++;
+                    if (CoorX < 1)
+                    {
+                        Console.WriteLine("\n\n>> CAN'T GO THAT WAY...");
+                    }
+                    else
+                    {
+                        //left
+                        CoorX = CoorX - 1;
+                        HP--;
+                        turn++;
+                    }
                     break;
                 case ConsoleKey.NumPad6:
-                    //right
-                    CoorX = CoorX + 1;
-                    HP--;
-                    turn++;
+                    if (CoorX >= board.Column - 1)
+                    {
+                        Console.WriteLine("\n\n>> CAN'T GO THAT WAY...");
+                    }
+                    else
+                    {
+                        //right
+                        CoorX = CoorX + 1;
+                        HP--;
+                        turn++;
+                    }
                     break;
                 case ConsoleKey.NumPad7:
-                    //diag upLeft
-                    CoorY = CoorY - 1;
-                    CoorX = CoorX - 1;
+                    if (CoorX < 1 || CoorY < 1)
+                    {
+                        Console.WriteLine("\n\n>> CAN'T GO THAT WAY...");
+                    }
+                    else
+                    {
+                        //diag upLeft
+                        CoorY = CoorY - 1;
+                        CoorX = CoorX - 1;
 
-                    HP--;
-                    turn++;
+                        HP--;
+                        turn++;
+                    }
                     break;
-
                 case ConsoleKey.NumPad9:
-                    //diag upRight
-                    CoorY = CoorY - 1;
-                    CoorX = CoorX + 1;
+                    if (CoorX >= board.Column - 1 || CoorY < 1)
+                    {
+                        Console.WriteLine("\n\n>> CAN'T GO THAT WAY...");
+                    }
+                    else
+                    {
+                        //diag upRight
+                        CoorY = CoorY - 1;
+                        CoorX = CoorX + 1;
 
-                    HP--;
-                    turn++;
+                        HP--;
+                        turn++;
+                    }
                     break;
                 case ConsoleKey.NumPad3:
-                    //diag downRight
-                    CoorY = CoorY + 1;
-                    CoorX = CoorX + 1;
+                    if (CoorX >= board.Column - 1 || CoorY >= board.Row - 1)
+                    {
+                        Console.WriteLine("\n\n>> CAN'T GO THAT WAY...");
+                    }
+                    else
+                    {
+                        //diag downRight
+                        CoorY = CoorY + 1;
+                        CoorX = CoorX + 1;
 
-                    HP--;
-                    turn++;
+                        HP--;
+                        turn++;
+                    }
                     break;
                 case ConsoleKey.NumPad1:
-                    //diag downLeft
-                    CoorY = CoorY + 1;
-                    CoorX = CoorX - 1;
+                    if (CoorX < 1 || CoorY >= board.Row - 1)
+                    {
+                        Console.WriteLine("\n\n>> CAN'T GO THAT WAY...");
+                    }
+                    else
+                    {
+                        //diag downLeft
+                        CoorY = CoorY + 1;
+                        CoorX = CoorX - 1;
 
-                    HP--;
-                    turn++;
+                        HP--;
+                        turn++;
+                    }
                     break;
                 case ConsoleKey.L:
                     Console.WriteLine("Look Around");
