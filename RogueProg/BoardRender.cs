@@ -44,6 +44,83 @@ namespace RogueProg
             Console.WriteLine(setas3 + "\t" + cmd2);
         }
 
+        private void MapLookAround()
+        {
+            //Side Information
+            int pX = player.CoorX;
+            int pY = player.CoorY;
+
+            int eX = exit.CoorX;
+            int eY = exit.CoorY;
+
+            int i = 0;
+
+            List<string> allStrings = new List<string>();
+
+            allStrings.Add($"\t\tCurrent coordinates P:\tx = {pX}\ty = {pY}");
+            allStrings.Add($"\t\tCurrent coordinates E:\tx = {eX}\ty = {eY}");
+            allStrings.Add($"\t\tCurrent HP:\t{player.HP}");
+
+            //----
+
+            for (int y = 0; y < board.Row; y++)
+            {
+                Console.Write("\t\t");
+
+                for (int x = 0; x < board.Column; x++)
+                {
+                    if (x == player.CoorX && y == player.CoorY)
+                    {
+                        Console.Write(" P ");
+                    }
+                    else if (y == player.CoorY - 1 && x == player.CoorX && y == exit.CoorY && x == exit.CoorX)
+                    {
+                        //up
+                        Console.Write(" E ");
+                    }
+                    else if (y == player.CoorY - 1 && x == player.CoorX + 1 && y == exit.CoorY && x == exit.CoorX)
+                    {
+                        //upRight
+                        Console.Write(" E ");
+                    }
+                    else if (y == player.CoorY && x == player.CoorX + 1 && y == exit.CoorY && x == exit.CoorX)
+                    {
+                        //right
+                        Console.Write(" E ");
+                    }
+                    else if (y == player.CoorY + 1 && x == player.CoorX && y == exit.CoorY && x == exit.CoorX)
+                    {
+                        //down
+                        Console.Write(" E ");
+                    }
+                    else if (y == player.CoorY + 1 && x == player.CoorX + 1 && y == exit.CoorY && x == exit.CoorX)
+                    {
+                        //downRight
+                        Console.Write(" E ");
+                    }
+                    else
+                    {
+                        Console.Write(" \u23FA ");
+                    }
+                }
+
+                if (i < allStrings.Count)
+                {
+                    Console.WriteLine($"{allStrings[i]}");
+                    i++;
+                }
+                else
+                {
+                    Console.Write("\n");
+                }
+
+                Console.Write("\n");
+            }
+
+            player.lookAround = false;
+
+        }
+
         private void MapGrid()
         {
             //Side Information
@@ -96,7 +173,14 @@ namespace RogueProg
         public void Render()
         {
             LevelLegend();
-            MapGrid();
+            if (player.lookAround == true)
+            {
+                MapLookAround();
+            }
+            else
+            {
+                MapGrid();
+            }
             ControlLegend();
         }
     }

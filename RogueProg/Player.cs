@@ -16,6 +16,8 @@ namespace RogueProg
 
         internal int turn = 1;
 
+        internal bool lookAround;
+
         Random rand = new Random();
         Board board = new Board();
 
@@ -27,6 +29,8 @@ namespace RogueProg
 
             CoorY = rand.Next(board.Row);
             CoorX = 0;
+
+            lookAround = false;
         }
         
         public void MovePlayer()
@@ -153,13 +157,14 @@ namespace RogueProg
                     }
                     break;
                 case ConsoleKey.L:
-                    Console.WriteLine("Look Around");
+                    Console.WriteLine("\n\n>> LOOKING AROUND...");
+                    lookAround = true;
                     break;
                 case ConsoleKey.Q:
                     Environment.Exit(0);
                     break;
                 default:
-                    Console.WriteLine("INVALID COMMAND");
+                    Console.WriteLine("\n\n>> INVALID COMMAND");
                     break;
             }
         }
