@@ -4,11 +4,13 @@ using System.Text;
 
 namespace RogueProg
 {
+    /// <summary>
+    /// Class that controls the gameloop.
+    /// Calls on all the game related methods.
+    /// Keeps track of all gameloop conditions.
+    /// </summary>
     class Game
     {
-        //Call game realted variables and methods
-        //Controls gameloop
-
         /// <summary>
         /// Calls Board Class and initializes the variable.
         /// </summary>
@@ -34,6 +36,7 @@ namespace RogueProg
 
         /// <summary>
         /// Calls MenuOptions Class and initializes the variable.
+        /// Resets all current values to the ones at the game's start.
         /// </summary>
         MenuOptions resetGame = new MenuOptions();
 
@@ -72,7 +75,6 @@ namespace RogueProg
 
 
             //After game victory check and reset
-
             if (winCheck == true)
             {
                 YouWon();
@@ -111,7 +113,8 @@ namespace RogueProg
         {
             Console.WriteLine("\n\n\nAmazing!");
             Console.WriteLine("\nYou have won!!");
-            Console.ReadKey();
+            ++board.d;
+            Console.Read();
         }
 
         /// <summary>
@@ -122,7 +125,7 @@ namespace RogueProg
         {
             Console.WriteLine("\n\n\nOh no!");
             Console.WriteLine("\nYou have lost!!");
-            Console.ReadKey();
+            Console.Read();
         }
 
     }

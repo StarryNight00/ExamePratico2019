@@ -4,23 +4,29 @@ using System.Text;
 
 namespace RogueProg
 {
+    /// <summary>
+    /// All the methods from the options presented on the Main Menu.
+    /// Serves as a bridge to start the actual game.
+    /// </summary>
     class MenuOptions
     {
-        //Methods for each menu option
+        /// <summary>
+        /// Information string for the HighScore screen.
+        /// </summary>
+        private string highScore = "No information is available at the moment.";
 
-        //All information strings
-        string highScore = "No information is available at the moment.";
-        string credits = "Developed by\n\n\t\tCatarina Matias\ta21801693";
+        /// <summary>
+        /// Information string for the Credits screen.
+        /// </summary>
+        private string credits = "Developed by\n\n\t\tCatarina Matias\ta21801693";
 
         /// <summary>
         /// Method that creates a new game with reshuffled values.
         /// </summary>
         internal void NewGame()
         {
-            //initialises Game
-            Console.WriteLine("\n\nLet's Start");
+            Console.WriteLine("\n\n\n>> Start Game\n\n");
             Console.Read();
-
 
             Game game = new Game();
             game.GameInit();

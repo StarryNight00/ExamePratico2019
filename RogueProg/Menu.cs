@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RogueProg
 {
+    /// <summary>
+    /// Menu Class. Controls the Main Menu presented to the player. 
+    /// </summary>
     class Menu
     {
         /// <summary>
@@ -21,7 +24,7 @@ namespace RogueProg
         /// </summary>
         public void FirstScreen()
         {
-            Console.WriteLine("\t\t\t-------");
+            Console.WriteLine("\n\n\n\n\n\t\t\t-------");
             Console.WriteLine("\t\t      Press Any Key");
             Console.WriteLine("\t\t\t-------");
         }
@@ -38,6 +41,10 @@ namespace RogueProg
             Console.WriteLine("\t\t\t4 -- Quit");
         }
 
+        /// <summary>
+        /// Method that controls the Main menu presentation.
+        /// Calls on each option (from MenuOptions class) when it's selected.
+        /// </summary>
         public void MenuController()
         {
             do
@@ -53,9 +60,6 @@ namespace RogueProg
 
                 switch (Convert.ToInt32(input))
                 {
-                    case 0:
-                        MenuController();
-                        break;
                     case 1:
                         options.NewGame();
                         break;

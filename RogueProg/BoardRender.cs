@@ -4,14 +4,22 @@ using System.Text;
 
 namespace RogueProg
 {
+    /// <summary>
+    /// Class that focuses on the graphic rendering of the game.
+    /// </summary>
     class BoardRender
     {
         private Board board;
         private Player player;
         private Exit exit;
 
-        internal int level = 1;
-
+        /// <summary>
+        /// Render constructor.
+        /// 
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="player"></param>
+        /// <param name="exit"></param>
         public BoardRender(Board board, Player player, Exit exit)
         {
             this.board = board;
@@ -19,16 +27,22 @@ namespace RogueProg
             this.exit = exit;
         }
 
+        /// <summary>
+        /// Method with all the string related to the level.
+        /// To be shown at the top.
+        /// </summary>
         private void LevelLegend()
         {
-            string leg1 = $"Level: {level} |";
-            string leg2 = $" Dificulty: {board.d} |";
-            string leg3 = $" Map Size: {board.Column}x{board.Row}" +
-                $"";
+            string leg2 = $"Dificulty: {board.d} |";
+            string leg3 = $" Map Size: {board.Column}x{board.Row}";
 
-            Console.WriteLine("\n>>> " + leg1 + leg2 + leg3 + "<<<\n\n");
+            Console.WriteLine("\n>>> " + leg2 + leg3 + " <<<\n\n");
         }
 
+        /// <summary>
+        /// Method with all the strings related to the playable controls.
+        /// 
+        /// </summary>
         private void ControlLegend()
         {
             string setas1 = "\n\t\u2196 \u2191 \u2197";
@@ -44,6 +58,11 @@ namespace RogueProg
             Console.WriteLine(setas3 + "\t" + cmd2);
         }
 
+        /// <summary>
+        /// Method that renders the 'Look Around' action map.
+        /// This method has extra cycles to verify if the Exit is at any of the
+        /// neighboring coordinates.
+        /// </summary>
         private void MapLookAround()
         {
             //Side Information
@@ -57,9 +76,10 @@ namespace RogueProg
 
             List<string> allStrings = new List<string>();
 
-            allStrings.Add($"\t\tCurrent coordinates P:\tx = {pX}\ty = {pY}");
-            allStrings.Add($"\t\tCurrent coordinates E:\tx = {eX}\ty = {eY}");
-            allStrings.Add($"\t\tCurrent HP:\t{player.HP}");
+            allStrings.Add($"\t\tPlayer P | Coordinates:\tx = {pX}\ty = {pY}");
+            allStrings.Add($"\t\tExit - E");
+            //allStrings.Add($"\t\tCurrent coordinates E:\tx = {eX}\ty = {eY}");
+            allStrings.Add($"\t\tCurrent Player HP:\t{player.HP}");
 
             //----
 
@@ -100,7 +120,7 @@ namespace RogueProg
                     }
                     else
                     {
-                        Console.Write(" \u23FA ");
+                        Console.Write(" . ");
                     }
                 }
 
@@ -121,6 +141,11 @@ namespace RogueProg
 
         }
 
+        /// <summary>
+        /// Method that renders the normal map.
+        /// This method verifies if the coordinates currently being drawn
+        /// are the same as the player's, beside rendering the side legend.
+        /// </summary>
         private void MapGrid()
         {
             //Side Information
@@ -134,9 +159,10 @@ namespace RogueProg
 
             List<string> allStrings = new List<string>();
 
-            allStrings.Add($"\t\tCurrent coordinates P:\tx = {pX}\ty = {pY}");
-            allStrings.Add($"\t\tCurrent coordinates E:\tx = {eX}\ty = {eY}");
-            allStrings.Add($"\t\tCurrent HP:\t{player.HP}");
+            allStrings.Add($"\t\tPlayer P | Coordinates:\tx = {pX}\ty = {pY}");
+            allStrings.Add($"\t\tExit - E");
+            //allStrings.Add($"\t\tCurrent coordinates E:\tx = {eX}\ty = {eY}");
+            allStrings.Add($"\t\tCurrent Player HP:\t{player.HP}");
 
             //----
 
@@ -152,7 +178,7 @@ namespace RogueProg
                     }
                     else
                     {
-                        Console.Write(" \u23FA ");
+                        Console.Write(" . ");
                     }
                 }
 
@@ -170,6 +196,10 @@ namespace RogueProg
             }
         }
 
+        /// <summary>
+        /// Method that calls on each screen. When on the main gameloop,
+        /// there's only need to call for this method.
+        /// </summary>
         public void Render()
         {
             LevelLegend();
